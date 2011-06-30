@@ -1,5 +1,7 @@
 SampleApp::Application.routes.draw do
   
+  get "highscores/new"
+
   root :to => "pages#home"
   
   match '/games', :to => 'pages#games'

@@ -12,5 +12,6 @@ group :development, :test do
   gem 'rb-notifu'
   gem 'webrat', '0.7.1'
   gem 'sass'
+  gem 'annotate'
 end
 
