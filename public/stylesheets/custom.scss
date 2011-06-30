@@ -1,77 +1,94 @@
+$main-color: #000000;
+$hover-color: lighten($main-color,35%);
+
 .container {
-  width: 710px; }
+  width: 710px;
+}
 
 body {
-  background: #cff; }
+  background: #cff;
+}
 
 header {
-  padding-top: 20px; }
-  header img {
+  padding-top: 20px;
+  
+  img {
     padding: 1em;
-    background: #fff; }
+    background: #fff;
+  }
+}
+
 
 section {
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
-  background: #fff; }
+  background: #fff;
+}
 
 section h1 {
-  font-size: 200%; }
+  font-size: 200%;
+}
 
 /* Links */
+
 a {
   color: #09c;
-  text-decoration: none; }
-  a:hover {
+  text-decoration: none;
+
+  &:hover {
     color: #069;
-    text-decoration: underline; }
-  a:visited {
-    color: #B2B2B2; }
+    text-decoration: underline;
+  }
+  &:visited {
+    color: #B2B2B2;
+  }    
+}
+
 
 /* Navigation */
+
+
 ul {
+  
   font-size: 14px;
   margin: 0;
   padding: 0;
-  list-style: none; }
-
+  list-style: none;
+  
+}
 ul li {
   display: block;
   position: relative;
-  float: left; }
-
-li ul {
-  display: none; }
-
+  float: left;
+}
+li ul { display: none; }
 ul li a {
   display: block;
   text-decoration: none;
   color: #ffffff;
   border-top: 1px solid #ffffff;
   padding: 5px 15px 5px 15px;
-  background: black;
+  background: $main-color;
   margin-left: 1px;
-  white-space: nowrap; }
-
-ul li a:hover {
-  background: #595959; }
-
+  white-space: nowrap;
+}
+ul li a:hover { background: $hover-color; }
 li:hover ul {
   display: block;
-  position: absolute; }
-
+  position: absolute;
+}
 li:hover li {
   float: none;
-  font-size: 11px; }
+  font-size: 11px;
+}
+li:hover a { background: $hover-color; }
+li:hover li a:hover { background: $main-color; }
 
-li:hover a {
-  background: #595959; }
 
-li:hover li a:hover {
-  background: black; }
 
 /* Sign up button */
+
 a.signup_button {
   margin-left: auto;
   margin-right: auto;
@@ -82,10 +99,13 @@ a.signup_button {
   background: #006400;
   font-size: 150%;
   font-weight: bold;
-  padding: 20px; }
+  padding: 20px;
+}
 
 /* Round corners */
+
 .round {
-  -moz-border-radius: 10px;
+  -moz-border-radius:    10px;
   -webkit-border-radius: 10px;
-  border-radius: 10px; }
+  border-radius:         10px;
+}

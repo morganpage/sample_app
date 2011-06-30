@@ -1,10 +1,33 @@
   <header>
-    <%= image_tag("logo.png", :alt => "Sample App", :class => "round") %>
+    <%= link_to image_tag("logo.png", :alt => "Sample App", :class => "round"),
+    		root_path 
+    %>
     <nav class="round">
       <ul>
-        <li><%= link_to "Home", '#' %></li>
-        <li><%= link_to "Help", '#' %></li>
-        <li><%= link_to "Sign in", '#' %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Games", games_path %>
+			<ul>
+		    	<li><%= link_to "Space Dust", '#' %></li>
+		    	<li><%= link_to "Next...", '#' %></li>
+		    </ul>        
+		</li>
+		
+        <li><%= link_to "Hobbies", hobbies_path %>
+			<ul>
+		    	<li><%= link_to "Paragliding", '#' %></li>
+		    	<li><%= link_to "Snowboarding", '#' %></li>
+		    	<li><%= link_to "Walking", '#' %></li>
+		    	<li><%= link_to "Music", '#' %></li>
+		    </ul>        
+        </li>
+        
+        <li><%= link_to "Reviews", reviews_path %>
+			<ul>
+		    	<li><%= link_to "Game Reviews", '#' %></li>
+		    	<li><%= link_to "Model Reviews", '#' %></li>
+		    </ul>        
+        </li>
+        
       </ul>
     </nav>
   </header>

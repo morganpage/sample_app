@@ -5,7 +5,7 @@ describe PagesController do
   render_views
 
   before(:each) do
-    @base_title = "Ruby on Rails Tutorial Sample App"
+    @base_title = "Morgan Page's Web Portal"
   end
 
   describe "GET 'home'" do
@@ -27,33 +27,18 @@ describe PagesController do
 
   end
 
-  describe "GET 'contact'" do
+  describe "GET 'games'" do
     it "should be successful" do
-      get 'contact'
+      get 'games'
       response.should be_success
     end
 
     it "should have the right title" do
-      get 'contact'
+      get 'games'
       response.should have_selector("title",
-                                    :content => "#{@base_title} | Contact")
+                                    :content => "#{@base_title} | Games")
     end
 
-  end
-
-  
-  describe "GET 'about'" do
-    it "should be successful" do
-      get 'about'
-      response.should be_success
-    end
-
-    it "should have the right title" do
-      get 'about'
-      response.should have_selector("title",
-                                    :content => "#{@base_title} | About")
-    end
-    
   end
   
 end

@@ -4,12 +4,8 @@ class PagesController < ApplicationController
     @title = "Home"
   end
 
-  def contact
-    @title = "Contact"
+  def games
+    @title = "Games"
   end
   
-  def about
-    @title = "About"
-  end
-
 end
