@@ -1,5 +1,8 @@
 class Highscore < ActiveRecord::Base
   attr_accessible :name, :score
+  
+  validates :name,  :presence => true,
+                    :length => {:maximum =>50}
 end
 
 # == Schema Information
