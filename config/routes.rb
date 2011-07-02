@@ -1,6 +1,9 @@
 SampleApp::Application.routes.draw do
   
-  get "highscores/new"
+  resources :highscores
+  
+
+  match '/spacedust/highscores', :to => 'highscores#index'
 
   root :to => "pages#home"
   

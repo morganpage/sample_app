@@ -3,7 +3,10 @@ require 'spec_helper'
 describe Highscore do
   
   before(:each) do
-    @attr = { :name => "Example User", :score => 123}
+    secretKey = "Twas brillig, and the slithy toves. Did gyre and gimble in the wabe"
+    inputString = "Example User" + 123.to_s + secretKey
+    ehash = Digest::MD5.hexdigest(inputString)
+    @attr = { :name => "Example User", :score => 123, :encrypted_hash => ehash}
   end
   
   
@@ -27,6 +30,12 @@ describe Highscore do
     long_name_hscore.should_not be_valid
   end
   
+  describe "encrypted_hash" do
+    it "should have an encrypted_hash attribute" do
+      Highscore.new(@attr).should respond_to(:encrypted_hash)
+    end
+    
+  end
 end
 
 # == Schema Information
