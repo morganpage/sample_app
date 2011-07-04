@@ -5,12 +5,9 @@ class HighscoresController < ApplicationController
 
   def create # handles posts
     @highscore = Highscore.new(params[:highscore])
-
     respond_to do |format|
       if @highscore.save
-        #format.html  { head :ok }
         format.html { redirect_to(@highscore, :notice => 'Highscore was successfully created.') }
-        #format.xml  { render :xml => @highscore, :status => :created, :location => @highscore }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @highscore.errors, :status => :unprocessable_entity }
@@ -18,7 +15,6 @@ class HighscoresController < ApplicationController
       end
     end
   end
-
 
   def show
     @highscore = Highscore.find(params[:id])
@@ -32,7 +28,6 @@ class HighscoresController < ApplicationController
       format.xml { render :xml => @high_scores }
       format.json { render :text => @high_scores }
       format.text {render "index" ,:layout => false}
-  #"<% @high_scores.each do |h| %><%= h.name + /t %><% end %>" }
   end
 end
 end

@@ -1,3 +1,5 @@
+require_dependency 'secretstuff'
+
 class Highscore < ActiveRecord::Base
   attr_accessor   :encrypted_hash
   attr_accessible :name, :score , :encrypted_hash
@@ -10,8 +12,8 @@ class Highscore < ActiveRecord::Base
   validate :encrypted_hash_must_be_correct
   
   def encrypted_hash_must_be_correct
-    secretKey = "Twas brillig, and the slithy toves. Did gyre and gimble in the wabe"
-    inputString = self.name + self.score.to_s + secretKey
+    #secretKey = "Twas brillig, and the slithy toves. Did gyre and gimble in the wabe"
+    inputString = self.name + self.score.to_s + SecretStuff::SECRET_KEY
     ehash = Digest::MD5.hexdigest(inputString)
     if self.encrypted_hash != ehash
       errors.add(:encrypted_hash,"Encryped hash incorrect")

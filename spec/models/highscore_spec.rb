@@ -1,10 +1,11 @@
 require 'spec_helper'
+require_dependency 'secretstuff'
 
 describe Highscore do
   
   before(:each) do
-    secretKey = "Twas brillig, and the slithy toves. Did gyre and gimble in the wabe"
-    inputString = "Example User" + 123.to_s + secretKey
+    
+    inputString = "Example User" + 123.to_s + SecretStuff::SECRET_KEY
     ehash = Digest::MD5.hexdigest(inputString)
     @attr = { :name => "Example User", :score => 123, :encrypted_hash => ehash}
   end
