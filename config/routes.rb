@@ -8,10 +8,11 @@ SampleApp::Application.routes.draw do
   root :to => "pages#home"
   
   match '/games', :to => 'pages#games'
+    match '/spacedust', :to => 'pages#spacedust'
   match '/hobbies', :to => 'pages#hobbies'
   match '/reviews', :to => 'pages#reviews'
   match '/twitter', :to => 'pages#twitter'
-
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
