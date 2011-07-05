@@ -9,6 +9,16 @@ header {
   header img {
     padding: 1em;
     background: #fff; }
+    
+table, td, th
+{
+border:1px solid green;
+}
+th
+{
+background-color:green;
+color:white;
+}    
 
 section {
   margin-top: 1em;

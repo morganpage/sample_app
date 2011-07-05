@@ -1,5 +1,29 @@
 <h1>Space Dust</h1>
 
 <p>
-  This is the space dust page...
+  Stranded in the depths of space, constantly under attack by living alien spaceships...
+  How long can you survive, how many aliens will you destroy before you become Space Dust!!!
 </p>
+
+<h2>High Score Table</h2>
+<table>
+<tr>
+<th>Time Survived</th>
+<th>Full name</th>
+</tr>
+<% for high_score in @high_scores %>
+<tr>
+	
+	<td><%=h Time.at(high_score.score).gmtime.strftime('%R:%S') %></td>
+	
+	<td><%=h high_score.name %></td>
+
+
+
+
+
+</tr>
+<% end %>
+</table>
+
+
