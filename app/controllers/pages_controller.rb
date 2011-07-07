@@ -14,7 +14,7 @@ class PagesController < ApplicationController
   
   def spacedust
     @title = "Space Dust"
-    @high_scores = Highscore.find(:all, :limit => 100,
+    @high_scores = Highscore.find(:all, :limit => 10,
                                   :order => 'score desc')
     respond_to do |format|
       format.html  

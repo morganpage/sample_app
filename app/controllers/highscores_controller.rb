@@ -21,7 +21,7 @@ class HighscoresController < ApplicationController
   end
 
   def index
-    @high_scores = Highscore.find(:all, :limit => 100,
+    @high_scores = Highscore.find(:all, :limit => 10,
                                   :order => 'score desc')
     respond_to do |format|
       format.html  
